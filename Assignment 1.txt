@@ -1,0 +1,326 @@
+-5- integer
+float
+Boolean
+String
+int
+int- doubt
+string
+Float
+Float
+Array
+Array- doubt ful
+
+Ans2:
+
+A.
+using System;
+
+public class Length_str
+{
+
+  
+        public static void Main()
+        {
+
+        string str = "supercalifragiliticexpialidocious";
+        int length = str.Length;
+        Console.WriteLine("The length of string is: {0}", length);
+         }
+
+}
+
+B:
+
+using System;
+using System.Text.RegularExpressions;
+namespace ConsoleApp3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string str = "The foxy fox jumps before dancing the Foxtrot.";
+
+            
+            int fCount = Regex.Matches(str, "ice", RegexOptions.IgnoreCase).Count;
+
+            Console.WriteLine("number of counts of ice is " + fCount.ToString());
+        }
+    }
+}
+
+
+C:
+
+using System;
+using System.Text.RegularExpressions;
+namespace ConsoleApp3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int flength = ("supercalifragiliticexpialidocious").Length;
+            int slength = ("honorificabilitudinitatibus").Length;
+            int tlength = ("Bababadalgharaghtakamminarronkonn").Length;
+
+            Console.WriteLine("the longest word among all three are :\n");
+            if (flength > slength && flength > tlength)
+            {
+                Console.WriteLine("supercalifragiliticexpialidocious");
+
+            }
+
+            else if (slength > flength && slength > tlength)
+            {
+
+                Console.WriteLine("honorificabilitudinitatibus");
+
+            }
+
+            else
+            {
+                Console.WriteLine("Bababadalgharaghtakamminarronkonn");
+            }
+
+        }
+    }
+}
+
+D:
+
+using System;
+using System.Linq;
+using System.Collections.Generic;
+namespace ConsoleApp3
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<string> Words = new List<string>()
+
+             {
+                "Berlioz", "Borodin", "Brian", "Bartok", "Bellini", "Buxtehude", "Bernstein"
+                    };
+            Words.Sort();
+
+            foreach (var name in Words.Distinct())
+            {
+                Console.WriteLine(name );
+            }
+
+        }
+    }
+}
+
+Ans3:
+
+using System;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter value of first side");
+            string side1 = Console.ReadLine();
+            Console.WriteLine("Enter value of second side");
+            string side2 = Console.ReadLine();
+            Console.WriteLine("Enter value of third side");
+            string side3 = Console.ReadLine();
+            double fstside = double.Parse(side1);
+            double sndside = double.Parse(side2);
+            double trdside = double.Parse(side3);
+            double s = (fstside  + sndside + trdside / 2.0;
+            double Area = Math.Sqrt(s * (s - fstside ) * (s - sndside) * (s - trdside));
+            Console.WriteLine("Area={0}", Area);
+
+        }
+    }
+}
+
+
+Ans4.
+
+using System;
+
+namespace ConsoleApp1
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                int[] num = {25, 42, 56, 47, 32};
+
+                int b = 0, c = 0;
+                int[] Even = new int [5];
+                int[] odd = new int[5];
+
+                for (int a = 0; a < num.Length; a++)
+                {
+                    if (num[a] % 2 == 0)
+                    {
+                        Even[b] = num[a];
+                        b++;
+                    }
+                    else
+                    {
+                        odd[c] = num[a];
+                        c++;
+                    }
+
+                }
+                Console.Write("The even elements are:\n");
+                for (int a = 0; a < b; a++)
+                {
+                    Console.Write(" {0} ", Even[a]);
+                }
+                Console.Write("\n The odd elements are:\n");
+                for (int a = 0; a < c; a++)
+                {
+                    Console.Write(" {0} ", odd[a]);
+                }
+            }
+
+        }
+    }
+
+
+
+
+Ans5.
+a.
+using System;
+
+public class Rectangle
+{
+
+    
+            static bool inside(int x, int y, int x1, int y1, int x2,
+                          int y2)
+        {
+            if (x > x1 && x < x2 &&
+                y > y1 && y < y2)
+                return true;
+
+            return false;
+        }
+        public static void Main()
+        {
+            int x = -1, y = -1;
+
+            int x1 = 0, y1 = 0,
+                x2 = 2, y2 = 3;
+
+            if (inside(x, y, x1, y1, x2, y2))
+                Console.Write("True");
+            else
+                 Console.Write("False");
+
+         }
+
+}
+
+
+
+
+
+
+Ans6.
+
+pig = input(" Type your word to convert into pig version : ")
+words = pig.lower().split(" ")
+vowels = ['a', 'e', 'i', 'o', 'u']
+pig = []
+eachWord = []
+for word in words:
+    if word[0] in 'aeiou': 
+        pig.append(word + 'yay')
+    if word[0] not in 'aeiou':
+        for letter in word:
+            if letter in 'aeiou':
+                pig.append(word[word.index(letter):] + word[:word.index(letter)] +'ay')
+
+
+print(" ".join(pig))
+
+
+Ans 7.
+
+# open a file
+with open ("E:/Studies/Classes/Sem1/Data Programming(1004)/Class/Assignemeent/Set problem 1/Blood_group.txt", "r") as f:
+
+# read data
+    f.readline()
+
+#  Getting the output
+    AB = 0
+    A = 0
+    B = 0
+    O = 0
+    OO= 0
+
+    for line in f:
+
+        blood_group = line.split(" ")[18]
+        
+        if blood_group == 'AB' :
+            AB += 1
+        elif blood_group == 'A' :
+            A += 1
+        elif blood_group == 'B' :
+            B += 1
+        elif blood_group == 'O' :
+            O += 1
+        else :
+            OO += 1
+
+#6
+print("There are ", A, " patients of blood type A")
+print("There are ", A, " patients of blood type B")
+print("There are ", AB, " patients of blood type AB")
+print("There are ", O, " patients of blood type O")
+print("There are ", OO, " patients of blood type OO")
+
+Ans8.
+
+import pandas as pd
+
+Cur_fil=pd.read_csv("E:/Studies/Classes/Sem1/Data Programming(1004)/Class/Assignemeent/Set problem 1/CurrencyFile.csv", header = None)
+
+Cur_file=Cur_fil.rename(columns={0:'Currency',1:'Conversion',2:'Description'})
+
+def curconv(Unit, Amount):
+    Rate=Cur_file.loc[Cur_file['Currency'] == Unit, 'Conversion'].values
+    return Rate*Amount
+    print(curconv('JPY',100))
+
+
+Ans 9.
+
+part1.TypeError: unsupported operand type(s) for +: 'int' and 'str'
+
+part2.TypeError: 'set' object is not callable
+
+part3.ValueError: math domain error
+
+part4. NameError: name 'x' is not defined
+
+part5.FileNotFoundError: [Errno 2] No such file or directory: 'demofile.txt
+
+
+
+Ans10.
+
+def frequencies(sentence):
+    alphabet = 'abcdefghijklmnopqrstuvwxyz'
+    freqs = []
+    for char in alphabet:
+        freqs.append(sentence.count(char))
+    
+    return freqs
+
+
